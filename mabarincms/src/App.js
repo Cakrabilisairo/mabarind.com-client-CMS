@@ -1,7 +1,11 @@
 // import logo from './logo.svg';
 import './App.css';
 import Home from './pages/Home'
+import Navbar from './components/Navbar'
+import Tournaments from './pages/Tournaments'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+
+
 
 function App() {
   return (
@@ -22,8 +26,12 @@ function App() {
     //   </header>
     // </div>
     <div>
+      <Navbar />
      <Router>
        <Switch>
+        <Route path= '/tournaments'>
+          <Tournaments />
+        </Route>
         <Route Path = '/'>
           <Home />
         </Route>

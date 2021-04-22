@@ -1,5 +1,6 @@
 const initialState = {
-  apiUrl: ''
+  tournamentApiUrl: 'http://localhost:3001/tournament',
+  teamTournamentApiUrl: 'http://localhost:3001/team-tournament'
 }
 
 function reducer (state = initialState, action) {
