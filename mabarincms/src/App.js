@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Tournaments from './pages/Tournaments'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import DetailTeamTournament from './pages/DetailTeamTournament';
+import DetailMember from './pages/DetailMember';
 
 
 
@@ -32,6 +33,9 @@ function App() {
        <Switch>
         <Route path= '/detail-teamtournament/:idTeam/:idTournament'>
           <DetailTeamTournament />
+        </Route>
+        <Route path= '/detail-member/:id'>
+          <DetailMember />
         </Route>
         <Route path= '/tournaments'>
         <Tournaments />
