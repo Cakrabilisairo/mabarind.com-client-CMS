@@ -99,7 +99,7 @@ function DetailTeamTournamentComponent (props) {
                   {
                     props.memberTeamList.map((member)=>(
                       // please make animation like pokemon card for this list
-                      <Link to='/'>
+                      <Link to={`/detail-member/${member.MemberId}`} key={member.Member.id}>
                         <div className='mb-2 flex shadow-md'>
                           <div className=''>
                             <img className="w-20" src={personSkeleton} alt=""/>
