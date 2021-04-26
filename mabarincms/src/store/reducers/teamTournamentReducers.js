@@ -1,7 +1,9 @@
 const initialState = {
   tournamentTeams: [],
   teamTournaments: [],
-  teamTournamentLoading: false
+  detailTeamTournament: {},
+  teamTournamentLoading: false,
+  detailTeamTournamentLoading: false
 }
 
 function reducer (state =initialState, action) {
@@ -14,6 +16,12 @@ function reducer (state =initialState, action) {
     
     case 'TEAMTOURNAMENT/SETTEAMTOURNAMENTLOADING' :
       return {...state, tournamentTeams: action.payload}
+
+    case 'TEAMTOURNAMENT/SETDETAILTEAMTOURNAMENT' :
+      return {...state, detailTeamTournament: action.payload}
+
+    case 'TEAMTOURNAMENT/SETDETAILTEAMTOURNAMENTLOADING' : 
+      return {...state, detailTeamTournamentLoading: action.payload}
 
     default:
       return state

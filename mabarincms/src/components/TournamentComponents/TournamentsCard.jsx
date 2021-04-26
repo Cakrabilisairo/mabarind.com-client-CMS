@@ -4,6 +4,7 @@ import dummyTournamentPoster from '../../assets/1.png'
 import {deleteTournament, detailTournament, editTournament, editStatusTournament} from '../../store/tournamentAction'
 import {filterTeamTournaments} from '../../helper/functionHelper'
 import dummyTeamLogo from '../../assets/3.png'
+import {NavLink} from 'react-router-dom'
 
 function TournamentCard (props) {
   const dispatch = useDispatch()
@@ -204,6 +205,8 @@ function TournamentCard (props) {
           </button>
         </div>
       </div>
+
+      {/* Modal For Edit Tournaments */}
       {showModalEdit ? (
         <>
           <div
@@ -389,6 +392,7 @@ function TournamentCard (props) {
         </>
       ) : null}
       
+      {/* Modal For Showing Joined Team */}
       {showModalJoinedTeam ? (
         <>
           <div
@@ -412,10 +416,13 @@ function TournamentCard (props) {
                   </button>
                 </div>
                 {/*body*/}
+                
                 <div className="relative p-6 flex-auto overflow-y-auto">
                   { filterTeamTournaments(props.joinedTeams, props.tournaments.id).length !== 0 ?
+                  
                     filterTeamTournaments(props.joinedTeams, props.tournaments.id).map((team)=> (
-                      <div className='bg-gray-800 mb-3 w-96 rounded' key={team.Team.id}>
+                      <NavLink to={`/detail-teamtournament/${team.Team.id}/${props.tournaments.id}`} key={team.Team.id}>
+                      <div className='bg-gray-800 mb-3 w-96 rounded' >
                         <div className='flex'>
                           <div>
                             <img className='w-28' src={dummyTeamLogo} alt=""/>
@@ -430,7 +437,9 @@ function TournamentCard (props) {
                           </div>
                         </div>
                       </div>
-                    )) : <p className='text-xl font-bold text-center text-gray-300'>No Teams Joined yet</p>
+                      </NavLink> 
+
+                    )):<p className='text-xl font-bold text-center text-gray-300'>No Teams Joined yet</p>
                   }
                 </div>
                 {/*footer*/}
@@ -449,7 +458,8 @@ function TournamentCard (props) {
           <div className="opacity-60 fixed inset-0 z-40 bg-black"></div>
         </>
       ) : null}
-
+      
+      {/* Modal for Change Status Tournaments */}
       {showModalStatusTournament ? (
         <>
           <div
@@ -473,16 +483,16 @@ function TournamentCard (props) {
                   </button>
                 </div>
                 {/*body*/}
-                <div className="relative p-6 flex-auto">
-                  <form action="" className='w-96'>
-                    <select name="" id="" onChange={onChangeTournamentStatus} className='w-96'>
-                      <option value=''>--Select--</option>
-                      <option value="Soon">Soon</option>
-                      <option value="On Going">On Going</option>
-                      <option value="Done">Done</option>
-                    </select>
-                  </form>
-                </div>
+                  <div className="relative p-6 flex-auto">
+                    <form action="" className='w-96'>
+                      <select name="" id="" onChange={onChangeTournamentStatus} className='w-96'>
+                        <option value=''>--Select--</option>
+                        <option value="Soon">Soon</option>
+                        <option value="On Going">On Going</option>
+                        <option value="Done">Done</option>
+                      </select>
+                    </form>
+                  </div>
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
                   <button
