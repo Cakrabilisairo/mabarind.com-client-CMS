@@ -14,7 +14,6 @@ function DetailMember () {
   useEffect(() => {
     dispatch(fetchDetailMember(`${detailMemberApiUrl}/${params.id}`))
   }, [dispatch, params, detailMemberApiUrl])
-  console.log(detailsMember)
 
   return (
     <div>

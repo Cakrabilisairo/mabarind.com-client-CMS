@@ -7,7 +7,7 @@ const initialState = {
 
 function reducer (state = initialState, action) {
   switch(action.type) {
-    case 'MEMBER/SETALLMEMBERS': 
+    case 'MEMBER/SETMEMBERS': 
       return {...state, members: action.payload}
     case 'MEMBER/SETDETAILMEMBER': 
       return {...state, detailMember: action.payload}

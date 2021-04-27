@@ -6,6 +6,7 @@ import Tournaments from './pages/Tournaments'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import DetailTeamTournament from './pages/DetailTeamTournament';
 import DetailMember from './pages/DetailMember';
+import MemberPage from './pages/MemberPage';
 
 
 
@@ -39,6 +40,9 @@ function App() {
         </Route>
         <Route path= '/tournaments'>
         <Tournaments />
+        </Route>
+        <Route path= '/members'>
+          <MemberPage />
         </Route>
         <Route Path = '/'>
           <Home />
