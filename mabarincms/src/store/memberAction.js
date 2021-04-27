@@ -20,3 +20,14 @@ export function fetchDetailMember (apiUrl) {
     dispatch(setLoadingDetailMember(false))
   }
 }
+
+export function fetchMembers (apiUrl) {
+  return async (dispatch) => {
+    dispatch(setLoadingMembers(true))
+    const response = await (fetch(apiUrl))
+    const data = await response.json()
+    dispatch(setLoadingMembers(false))
+    dispatch(setMembers(data))
+    console.log(data)
+  }
+}
