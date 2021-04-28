@@ -7,6 +7,8 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import DetailTeamTournament from './pages/DetailTeamTournament';
 import DetailMember from './pages/DetailMember';
 import MemberPage from './pages/MemberPage';
+import TeamPage from './pages/TeamPage';
+import DetailTeam from './pages/DetailTeam';
 
 
 
@@ -38,11 +40,17 @@ function App() {
         <Route path= '/detail-member/:id'>
           <DetailMember />
         </Route>
+        <Route path= '/detail-team/:id'>
+          <DetailTeam />
+        </Route>
         <Route path= '/tournaments'>
         <Tournaments />
         </Route>
         <Route path= '/members'>
           <MemberPage />
+        </Route>
+        <Route path= '/teams'>
+          <TeamPage />
         </Route>
         <Route Path = '/'>
           <Home />

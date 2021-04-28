@@ -4,6 +4,7 @@ import tournamentReducers from './reducers/tournamentReducers'
 import teamTournamentReducers from './reducers/teamTournamentReducers'
 import memberTeamReducers from './reducers/memberTeamReducers'
 import memberReducers from './reducers/memberReducer'
+import teamReducers from  './reducers/teamReducers'
 import thunk from 'redux-thunk'
 
 const rootReducer = combineReducers ({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers ({
   tournament: tournamentReducers,
   teamTournament: teamTournamentReducers,
   memberTeam: memberTeamReducers,
-  member: memberReducers
+  member: memberReducers,
+  team: teamReducers
 
 })
 const store = createStore(rootReducer, applyMiddleware(thunk))
