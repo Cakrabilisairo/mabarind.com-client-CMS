@@ -71,6 +71,7 @@ function DetailTeamTournamentComponent (props) {
       </div>
     }
 
+    {/* Modal for Peek Member */}
     {showModalTeamMember ? (
         <>
           <div

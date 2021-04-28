@@ -39,12 +39,12 @@ export default function Navbar({ fixed }) {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a
+                <NavLink to='/teams'
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                   href="#pablo"
                 >
                   <i className="fab fa-twitter text-lg leading-lg text-white opacity-75"></i><span className="ml-2">Team</span>
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink to='/members'
